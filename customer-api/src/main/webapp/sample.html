@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+
+                //LIKEs
+                $("#increaselikebutton").click(function () {
+                    $.get("/customer-api/api/client/open?clientId=myapplication&actionType=likes",
+                            function (data, status) {
+                                // alert(JSON.stringify(data));
+                                alert(data.amount);
+                            });
+                });
+
+                $("#decreaselikebutton").click(function () {
+                    $.get("/customer-api/api/client/close?clientId=myapplication&actionType=likes",
+                            function (data, status) {
+                                //TODO: make action with json
+                                alert(data.amount);
+                            });
+                });
+
+
+                //VIEWs
+                $("#increaseviewbutton").click(function () {
+                    $.get("/customer-api/api/client/open?clientId=myapplication&actionType=views",
+                            function (data, status) {
+                                // alert(JSON.stringify(data));
+                                alert(data.amount);
+                            });
+                });
+
+                $("#decreaseviewbutton").click(function () {
+                    $.get("/customer-api/api/client/close?clientId=myapplication&actionType=views",
+                            function (data, status) {
+                                //TODO: make action with json
+                                alert(data.amount);
+                            });
+                });
+
+
+            });
+        </script>
+    </head>
+    <body>
+        <p>
+            <button id="increaselikebutton">++INCREASE_LIKEs++</button>
+        </p>
+        <p>
+            <button id="decreaselikebutton">--DECREASE_LIKEs--</button>
+        </p>
+        <p>
+            <button id="increaseviewbutton">++INCREASE_VIEWs++</button>
+        </p>
+        <p>
+            <button id="decreaseviewbutton">--DECREASE_VIEWs--</button>
+        </p>
+    </body>
+</html>
