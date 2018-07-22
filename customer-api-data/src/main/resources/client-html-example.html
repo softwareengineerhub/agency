@@ -1,0 +1,78 @@
+<html>
+
+    <body>
+    
+    <textarea rows="10" cols="100" >
+        
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script>
+
+            $("#buttonOpen").click(function () {
+                $.get("/customer-api/api/client/open?clientId=%s",
+                        function (data, status) {
+                            //TODO: make action with json
+                            alert(JSON.stringify(data));
+                        });
+            });
+
+
+            $("#buttonClose").click(function () {
+                $.get("/customer-api/api/client/close?clientId=%s",
+                        function (data, status) {
+                            //TODO: make action with json
+                            alert(JSON.stringify(data));
+                        });
+            });
+
+        </script>
+
+
+
+    </head>
+    <body>
+        <form method="post" action="api/user/create">
+            <p>
+                Create new application Client:<br>
+                <input type="text" name="user" value="myapplication">
+            </p>
+            <input type="submit"/>
+        </form>
+
+        <p>
+            <button id="buttonOpen">Get information about users on site now</button>
+        </p>
+        <p>
+            <button id="buttonClose">Make notification to reduce amount of clients</button>
+        </p>        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </textarea>
+
+    </body>
+
+
+</html>
