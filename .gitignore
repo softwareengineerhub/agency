@@ -1,2 +1,4 @@
 /customer-api/target
 /customer-api/nb-configuration.xml
+/customer-api-data/target
+/customer-api-data/nb-configuration.xml
