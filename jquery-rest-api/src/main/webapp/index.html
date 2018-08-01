@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                var url = "/jquery-rest-api/api/data";
+                
+                $("#button1").click(function () {
+                    $.get("/jquery-rest-api/api/data", function (data, status) {
+                        //alert("Data: " + data + "\nStatus: " + status);
+                        var value = JSON.stringify(data);
+                        alert(value);
+                    });
+                });
+
+                $("#button3").click(function () {
+                    $.post("/jquery-rest-api/api/data",
+                            {
+                                name: "Donald Duck",
+                                age: "2"
+                            },
+                            function (data, status) {
+                                alert("Data: " + data + "\nStatus: " + status);
+                            });
+                });
+
+
+                /*$("#button2").click(function () {
+                 $.post("/jquery-rest-api/api/data",
+                 
+                 {
+                 name: "Donald Duck",
+                 age: "2"
+                 },
+                 function (data, status) {
+                 alert("\nStatus: " + status);
+                 });
+                 });*/
+
+
+
+                var data =  {
+                 name: "Donald Duck",
+                 age: "2"
+                 }
+
+                $("#button2").click(function () {
+                    jQuery.ajax({
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        'type': 'POST',
+                        'url': url,
+                        'data': JSON.stringify(data),
+                        'dataType': 'json',
+                        'success': alert("OK")
+                    });
+
+                });
+                
+                $("#button3").click(function () {
+                    jQuery.ajax({
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        'type': 'PUT',
+                        'url': url,
+                        'data': JSON.stringify(data),
+                        'dataType': 'json',
+                        'success': alert("OK")
+                    });
+
+                });
+
+
+
+
+            });
+        </script>
+    </head>
+    <body>
+
+        <button id="button1">Send an HTTP GET request to a page and get the result back</button>
+        <button id="button2">Send an HTTP POST request to a page and get the result back</button>
+        <button id="button3">Send an HTTP PUT request to a page and get the result back</button>
+    </body>
+</html>
