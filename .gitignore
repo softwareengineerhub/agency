@@ -2,3 +2,5 @@
 /customer-api/nb-configuration.xml
 /customer-api-data/target
 /customer-api-data/nb-configuration.xml
+/platform-api-data/target
+/platform-api-data/nb-configuration.xml
