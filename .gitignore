@@ -1,3 +1,4 @@
+target/
 /customer-api/target
 /customer-api/nb-configuration.xml
 /customer-api-data/target
@@ -5,3 +6,4 @@
 /platform-api-data/target
 /platform-api-data/nb-configuration.xml
 /jquery-rest-api/target/
+/jquery-rest-api/nb-configuration.xml
